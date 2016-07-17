@@ -1,0 +1,18 @@
+<template name="messages">
+<div class="content-container">
+    <ul> messages list:
+        {{#each messages}}
+            {{> message}}
+        {{/each}}
+    </ul>
+     <form class="inputMsg">
+         <input  class="form-message-input" type="text" name="text" placeholder="Type your message" autocomplete="off"/>
+       </form>
+    </div>
+ </template>
+
+<template name="message">
+    <li>
+         {{username}}: {{message}}
+    </li>
+</template>

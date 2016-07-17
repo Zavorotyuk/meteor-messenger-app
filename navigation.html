@@ -1,0 +1,32 @@
+<template name="navigation">
+    <header>
+     <ul>
+          {{#if currentUser}}
+               <li><a href="#" class="logout">Logout</a></li>
+               <li><a href="{{pathFor route='editprofile'}}">Edit profile</a></li>
+          {{else}}
+               <li><a href="{{pathFor route='registration'}}">Registration</a></li>
+               <li><a href="{{pathFor route='login'}}">Login</a></li>
+          {{/if}}
+     </ul>
+  </header>
+
+
+ {{#if currentUser}}
+     <nav>
+       <ul>
+          {{#each location}}
+              <li><a href="/loc/{{locName}}">{{locName}}</a></li>
+          {{/each}}
+       </ul>
+    </nav>
+ {{/if}}
+</template>
+
+
+<template name="location">
+    <div class="container container-cht">
+       <h2>{{text}}</h2>
+       {{> messages}}
+    </div>
+</template>
